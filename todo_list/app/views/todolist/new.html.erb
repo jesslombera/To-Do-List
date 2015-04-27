@@ -6,13 +6,11 @@
 <body>
 
 <h2>Create a To Do List</h2>
-	 <%= form_for :todo do |f| %>
+	 <%= form_for :todos do |f| %>
   <p>
     <%= f.label :name %><br>
     <%= f.text_field :name %>
   </p>
-
- 
 
   <p>
     <%= f.label :description %><br>

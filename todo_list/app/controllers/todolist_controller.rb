@@ -1,6 +1,6 @@
 class TodolistController < ApplicationController
   def index
-  	@todo = Todo.all
+  	@todos = Todo.all
   	render :index
   end
 
@@ -9,8 +9,14 @@ class TodolistController < ApplicationController
   	end
 
   	def create
-  		todo = require[:todo].permit(:name, :description)
-  		Todo.create(todo)
-  		redirect_to '/todo'
+  		list = params.require(:todos).permit(:name, :description)
+  		Todo.create(list)
+  		puts params['todos']
+  		redirect_to '/todos'
+  	end
+
+  	def show
+  		id = params[:id]
+  		@todo = Todo.find(id)
   	end
 end

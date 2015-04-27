@@ -5,14 +5,15 @@
 
 <h1>List of To Do's</h1>
 
-<% @todo.each do |plane| %>
+<% @todos.each do |todo| %>
 
     <div>
-      Name: <%= plane[:name] %> <br>
-      Description: <%= plane[:description] %>
+      Name: <%= todo[:name] %> <br>
+      Description: <%= todo[:description] %>
     </div>
-
+<a href = "/todos/<%= todo.id %>">Show</a>
   <% end %>
+
 
 
 

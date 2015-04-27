@@ -2,12 +2,13 @@ Rails.application.routes.draw do
   
   root to: 'todolist#index'
 
-  get '/todo', to: 'todolist#index'
+  get '/todos', to: 'todolist#index'
 
-  get '/todo/new', to: 'todolist#new'
+  get '/todos/new', to: 'todolist#new'
 
-  post '/todo/new', to: 'todolist#create'
+  post '/todos/new', to: 'todolist#create'
 
+  get '/todos/:id', to: 'todolist#show'
 
   
 
